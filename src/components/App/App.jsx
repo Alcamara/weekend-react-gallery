@@ -21,7 +21,7 @@ function to get data from server
 */
  let  fetchGalleryItems = () =>{
    axios({
-     url:'gallery',
+     url:'/gallery',
      method:'GET',
    })
     .then((response)=>{
@@ -33,6 +33,30 @@ function to get data from server
       console.log('Get require failed',err);
     })
  }
+
+/*
+Create a function that increment
+like by one sent data to server then 
+return the updated like count
+*/  
+
+function updateNumLikes(id, numLikes){
+  console.log('it worked',id,numLikes);
+
+  
+  console.log(numLikes);
+
+  axios({
+    url:`/gallery/like/${id}`,
+    method:'PUT'
+  }).then(()=>{
+    console.log('Put request worked');
+    fetchGalleryItems()
+  }).catch((err)=>{
+    console.log('Put request failed', err);
+  })
+
+}
  
     return (
       <div className="App">
@@ -41,7 +65,7 @@ function to get data from server
         </header>
         <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}
-        <GalleryList galleryItems={galleryItems}/>
+        <GalleryList updateNumLikes={updateNumLikes} galleryItems={galleryItems}/>
         
       </div>
     );

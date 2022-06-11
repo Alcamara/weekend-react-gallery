@@ -9,3 +9,8 @@ img {
     border: 1px dashed gray;
     width: 300px;
 }
+
+.pic-des{
+    padding: 5px;
+    font-size: 30px;
+}

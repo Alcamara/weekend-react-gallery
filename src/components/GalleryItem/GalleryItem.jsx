@@ -2,7 +2,7 @@
 import './GalleryItem.css'
 
 
-function GalleryItem(){
+function GalleryItem({key, item}){
 
     return(
         <div className='galleryItem'>

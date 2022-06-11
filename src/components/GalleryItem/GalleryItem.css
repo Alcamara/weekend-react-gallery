@@ -1,0 +1,10 @@
+img {
+    
+    height: 150px;
+}
+
+.galleryItem{
+    padding: 30px 0;
+    border: 3px solid black;
+    width: 300px;
+}

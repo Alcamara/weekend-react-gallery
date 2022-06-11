@@ -52,4 +52,29 @@ router.get('/', (req, res) => {
 
 }); // END GET Route
 
+router.post('/',(req,res)=>{
+    const path = req.body.path;
+    const description = req.body.description
+    console.log('Got data', path, description);
+
+    const insertQuery = `
+    INSERT INTO "gallery" (path,description,likes)
+    Values ($1,$2,0);
+    `
+
+    const queryParams = [
+        path,
+        description
+    ]
+
+    pool.query(insertQuery,queryParams)
+        .then(()=>{
+            res.sendStatus(200)
+        })
+        .catch((err)=>{
+            console.log('insetQuery failed',err);
+        })
+})
+
+
 module.exports = router;

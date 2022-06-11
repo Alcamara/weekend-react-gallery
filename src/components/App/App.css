@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #222;
-  padding: 1em;
+  background-color: hsl(208, 74%, 45%);
+  padding: 3em;
   color: white;
   margin-bottom: 1em;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
+  font-family: 'Source Sans Pro', sans-serif;
+  
 }
 

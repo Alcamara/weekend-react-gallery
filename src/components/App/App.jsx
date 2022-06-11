@@ -4,6 +4,7 @@ import  {useEffect, useState} from 'react'
 import GalleryList from '../GalleryList/GalleryList';
 import axios from 'axios';
 import GalleryInput from '../GalleryInput/GalleryInput';
+import GalleryHeader from '../GalleryHeader/GalleryHeader';
 
 function App() {
   const [galleryItems,setGalleryItems] = useState([]);
@@ -61,9 +62,7 @@ function updateNumLikes(id, numLikes){
  
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
+        <GalleryHeader/>
         <GalleryInput/>
         <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}

@@ -4,7 +4,8 @@ img {
 }
 
 .galleryItem{
+    margin-bottom: 30px;
     padding: 30px 0;
-    border: 3px solid black;
+    border: 1px dashed gray;
     width: 300px;
 }

@@ -5,7 +5,7 @@ import GalleryList from '../GalleryList/GalleryList';
 import axios from 'axios';
 
 function App() {
-  const [galleryItems,setGalleryItems] = useState();
+  const [galleryItems,setGalleryItems] = useState([]);
 
 /*
 On page load fetch data
@@ -27,12 +27,13 @@ function to get data from server
     .then((response)=>{
       //set GalleryItem state
       setGalleryItems(response.data)
+      
     })
     .catch((err)=>{
       console.log('Get require failed',err);
     })
  }
-
+ 
     return (
       <div className="App">
         <header className="App-header">
@@ -41,6 +42,7 @@ function to get data from server
         <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}
         <GalleryList galleryItems={galleryItems}/>
+        
       </div>
     );
 }

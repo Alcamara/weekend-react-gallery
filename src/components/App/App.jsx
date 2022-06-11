@@ -59,11 +59,35 @@ function updateNumLikes(id, numLikes){
   })
 
 }
+
+/* 
+function that takes in path/url and description of image 
+from Gallery input component and send it to 
+database. 
+  */
+
+function AddGalleryItem(pathInput,descriptionInput){
+  console.log('Called AddGalleryItem', pathInput, descriptionInput);
+
+  axios({
+    url:'/Gallery',
+    method:'POST',
+    data:{
+      path: pathInput,
+      description: descriptionInput
+    }
+  }).then(()=>{
+    console.log('Post request work');
+    fetchGalleryItems()
+  }).catch((err)=>{
+    console.log('Post request failed',err);
+  })
+}
  
     return (
       <div className="App">
         <GalleryHeader/>
-        <GalleryInput/>
+        <GalleryInput AddGalleryItem={AddGalleryItem}/>
         <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}
         <GalleryList updateNumLikes={updateNumLikes} galleryItems={galleryItems}/>

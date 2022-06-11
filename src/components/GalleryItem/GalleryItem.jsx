@@ -19,7 +19,7 @@ function GalleryItem({galleryItem,updateNumLikes}){
             }}
             
             >
-                {(!picClicked)? <img src={galleryItem.path}/>:<div height ='150'> <p className='pic-des'>{galleryItem.description}</p> </div> }
+                {(!picClicked)? <img src={galleryItem.path}/> : <div height ='150'> <p className='pic-des'>{galleryItem.description}</p> </div> }
             </div>
             <div>
                 <Button

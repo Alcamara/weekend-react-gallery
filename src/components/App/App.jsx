@@ -67,6 +67,7 @@ database.
   */
 
 function AddGalleryItem(pathInput,descriptionInput){
+  
   console.log('Called AddGalleryItem', pathInput, descriptionInput);
 
   axios({
@@ -83,6 +84,24 @@ function AddGalleryItem(pathInput,descriptionInput){
     console.log('Post request failed',err);
   })
 }
+
+/* 
+function send an axios delete request to remove 
+picture from table base on id
+*/
+function deleteGalleryItem(id){
+    console.log(id);
+    
+  axios({
+    url:`/gallery/${id}`,
+    method:'DELETE'
+  }).then(()=>{
+    console.log('Put request worked');
+    fetchGalleryItems()
+  }).catch((err)=>{
+    console.log('Put request failed', err);
+  })
+}
  
     return (
       <div className="App">
@@ -90,7 +109,7 @@ function AddGalleryItem(pathInput,descriptionInput){
         <GalleryInput AddGalleryItem={AddGalleryItem}/>
         <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}
-        <GalleryList updateNumLikes={updateNumLikes} galleryItems={galleryItems}/>
+        <GalleryList deleteGalleryItem={deleteGalleryItem} updateNumLikes={updateNumLikes} galleryItems={galleryItems}/>
         
       </div>
     );

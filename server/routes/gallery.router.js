@@ -52,6 +52,8 @@ router.get('/', (req, res) => {
 
 }); // END GET Route
 
+
+// POST Route Begins
 router.post('/',(req,res)=>{
     const path = req.body.path;
     const description = req.body.description
@@ -74,7 +76,32 @@ router.post('/',(req,res)=>{
         .catch((err)=>{
             console.log('insetQuery failed',err);
         })
-})
+})//END POST Route
+
+
+//DELETE Route Begins
+router.delete('/:id',(req,res)=>{
+    const id = req.params.id
+    console.log(id);
+
+    const deleteQuery = `
+    DELETE FROM gallery
+    WHERE "id" = $1;
+    `
+
+    const queryParam = [
+        id
+    ]
+
+    pool.query(deleteQuery,queryParam)
+        .then(()=>{
+            res.sendStatus(200)
+        })
+        .catch((err)=>{
+            console.log('Delete query failed', err);
+            res.sendStatus(500)
+        })
+})// END DELETE Route 
 
 
 module.exports = router;

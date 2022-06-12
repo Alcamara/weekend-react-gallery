@@ -96,15 +96,35 @@ picture from table base on id
 function deleteGalleryItem(id){
     console.log(id);
 
-  axios({
-    url:`/gallery/${id}`,
-    method:'DELETE'
-  }).then(()=>{
-    console.log('Put request worked');
-    fetchGalleryItems()
-  }).catch((err)=>{
-    console.log('Put request failed', err);
-  })
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this image",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your image has been deleted!", {
+          icon: "success",
+        });
+
+        axios({
+          url:`/gallery/${id}`,
+          method:'DELETE'
+        }).then(()=>{
+          console.log('Put request worked');
+          fetchGalleryItems()
+        }).catch((err)=>{
+          console.log('Put request failed', err);
+        })
+
+      } else {
+        swal("Your image file is safe!");
+      }
+
+    });
+
 }
  
     return (

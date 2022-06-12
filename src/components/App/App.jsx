@@ -5,6 +5,7 @@ import GalleryList from '../GalleryList/GalleryList';
 import axios from 'axios';
 import GalleryInput from '../GalleryInput/GalleryInput';
 import GalleryHeader from '../GalleryHeader/GalleryHeader';
+import swal from 'sweetalert';
 
 function App() {
   const [galleryItems,setGalleryItems] = useState([]);
@@ -68,21 +69,24 @@ database.
 
 function AddGalleryItem(pathInput,descriptionInput){
   
-  console.log('Called AddGalleryItem', pathInput, descriptionInput);
-
-  axios({
-    url:'/Gallery',
-    method:'POST',
-    data:{
-      path: pathInput,
-      description: descriptionInput
-    }
-  }).then(()=>{
-    console.log('Post request work');
-    fetchGalleryItems()
-  }).catch((err)=>{
-    console.log('Post request failed',err);
-  })
+  if(pathInput === '' || descriptionInput === ''){
+        swal('Opps!','Please Enter All Fields','error')
+  }else{
+    swal('Great','Image Was Added','success')
+    axios({
+      url:'/Gallery',
+      method:'POST',
+      data:{
+        path: pathInput,
+        description: descriptionInput
+      }
+    }).then(()=>{
+      console.log('Post request work');
+      fetchGalleryItems()
+    }).catch((err)=>{
+      console.log('Post request failed',err);
+    })
+  }
 }
 
 /* 
@@ -91,7 +95,7 @@ picture from table base on id
 */
 function deleteGalleryItem(id){
     console.log(id);
-    
+
   axios({
     url:`/gallery/${id}`,
     method:'DELETE'

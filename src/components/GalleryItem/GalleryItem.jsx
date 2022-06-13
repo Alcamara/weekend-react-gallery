@@ -17,6 +17,10 @@ function GalleryItem({galleryItem,updateNumLikes, deleteGalleryItem}){
         <div >
             <Card className='galleryItem' sx={{ minWidth: 275 }}>
                 <CardContent
+                /*
+                If user click on card content it display either
+                image or description of picture
+                */
                     onClick={()=>{
                         if(picClicked === true){
                             setPicClicked(false)
@@ -53,7 +57,8 @@ function GalleryItem({galleryItem,updateNumLikes, deleteGalleryItem}){
                     </Button> 
                 </ButtonGroup>
                 <Typography paragraph component="div">
-                { (galleryItem.likes > 0) ? <p>{galleryItem.likes} People love it!</p>: <p>No people love it</p> }
+                    {/* if number of like is number then 0 display number of likes, otherwise display No body love it   */}
+                { (galleryItem.likes > 0) ? <p>{galleryItem.likes} People love it!</p>: <p>No body love it 😞</p> }
                 </Typography>
                 
             </Card>

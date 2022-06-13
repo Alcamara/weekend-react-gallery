@@ -1,20 +1,21 @@
 const pg = require('pg');
 
-const config = {
-    host:'localhost',
-    port: 5432,
-    database:"react_gallery"
-};
+let pool;
 
-const pool = new pg.Pool(config)
+if(process.env.DATABASE_URL){
+    pool = new pg.Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl:{rejectUnauthorized: false}
+    })
+} else {
+     pool = new pg.Pool({
+        host:'localhost',
+        port: 5432,
+        database:"react_gallery"
+    }) ;
+}
 
-pool.on('connect',()=>{
-    console.log('Connected to postgres');
-})
-
-pool.on('error',()=>{
-    console.log('Error connecting to postgres');
-})
+ 
 
 
 module.exports = pool;

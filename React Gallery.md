@@ -14,7 +14,7 @@ To see the fully functional site, please visit: COMING SOON
 
 ## Screen Shot
 
-![Screen Shot 2022-06-12 at 11.36.43 PM.png](React%20Gallery%20576d422d7ebf4c6e8458ae5f700fb127/Screen_Shot_2022-06-12_at_11.36.43_PM.png)
+<img src="./build/images/React_gallery.gif" alt="">
 
 ![React_gallery.gif](React%20Gallery%20576d422d7ebf4c6e8458ae5f700fb127/React_gallery.gif)
 

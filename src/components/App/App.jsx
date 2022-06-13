@@ -131,7 +131,6 @@ function deleteGalleryItem(id){
       <div className="App">
         <GalleryHeader/>
         <GalleryInput AddGalleryItem={AddGalleryItem}/>
-        <p>Gallery goes here</p>
         {/* prop galleryItems to GalleryList */}
         <GalleryList deleteGalleryItem={deleteGalleryItem} updateNumLikes={updateNumLikes} galleryItems={galleryItems}/>
         

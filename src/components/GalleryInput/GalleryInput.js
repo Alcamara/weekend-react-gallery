@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 function GalleryInput({AddGalleryItem}){
     const [pathInput,setPathInput] = useState('');
     const [descriptionInput,setDescriptionInput] = useState('');
-    const [open, setOpen] = useState(false);
+   
 
     return (
         <Box
@@ -30,7 +30,7 @@ function GalleryInput({AddGalleryItem}){
                     value={pathInput} 
                     required  
                     size="small"  
-                    label="Path" 
+                    label="URL" 
                     variant="outlined" />
                 <TextField
                     onChange={(evt)=>{

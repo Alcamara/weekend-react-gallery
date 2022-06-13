@@ -1,6 +1,3 @@
-# weekend-react-gallery
-
-# React Gallery
 
 # React Gallery Project
 

@@ -13,7 +13,7 @@ To see the fully functional site, please visit: COMING SOON
 
 ## Screen Shot
 
-<img src="./build/images/React_gallery.gif" alt="Gif of how app worked"/>
+![Gif of how the app worked]()
 
 ### Prerequisites
 

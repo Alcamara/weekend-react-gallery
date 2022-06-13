@@ -14,7 +14,7 @@ To see the fully functional site, please visit: COMING SOON
 
 ## Screen Shot
 
-<img src="./build/images/React_gallery.gif" alt="">
+
 
 ![React_gallery.gif](React%20Gallery%20576d422d7ebf4c6e8458ae5f700fb127/React_gallery.gif)
 

@@ -13,7 +13,9 @@ To see the fully functional site, please visit: COMING SOON
 
 ## Screen Shot
 
-![Gif of how the app worked]()
+![Gif of how the app worked](/public/images/React_gallery.gif), ![Mobile verison](/public/images/mobile.png)
+
+![Desktop verison](/public/images/desktop.png)
 
 ### Prerequisites
 

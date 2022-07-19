@@ -26,13 +26,10 @@ Link to software that is required to install the app.
 - [Postico](https://eggerapps.at/postico/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
-- Axios
-- Material UI
-- Sweet Alerts
 
 ## Installation
 
-Coming Soon
+run npm install
 
 ## Usage
 
